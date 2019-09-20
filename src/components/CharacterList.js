@@ -18,7 +18,7 @@ export default function CharacterList() {
           updateCharacter(response.data.results);
         }
         else {
-          const searchResults = response.data.results.filter(item => item.name.includes(searchState));
+          const searchResults = response.data.results.filter(item => item.name.toLowerCase().includes(searchState.toLowerCase()));
           updateCharacter(searchResults)
         }
       })
