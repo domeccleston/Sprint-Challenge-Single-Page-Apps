@@ -25,12 +25,21 @@ In this challenge, you will create a Single Page Application complete with Clien
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
 - [ ] Explain benefit(s) using `client-side routing`?
+
 > Answer:
+
+In a website with server-side routing, every change in the address bar means a new request to a remote server.
+This means reloading all of the page's content, which is inefficient. Client-side routing replicates this process in the browser, and allows us to navigate site content without having to wait for a remote server.
+
 - [ ] What does AJAX stand for?
+
+Asynchronous Javascript and XML
 > Answer:
 - [ ] What are `controlled components` in React?
 > Answer:
-
+Controlled Components are controlled by the React state, rather than by the DOM state of the form itself. 
+This is relevant because HTML form elements naturally have some state. This is dealt with by making the React
+state the single source of truth, which determines the DOM state of the form.
 
 ## Project Set Up
 
@@ -68,6 +77,7 @@ You can still be locked out - watch your [chrome devtools' network panel](https:
 
 1. Plan: Divide your allowed time, use either 15, 30 or 60 minute intervals.
     1. Plan estimated targets or waypoints ("By the '1 hour' mark I'll have 1 component functionally completed & styled"). **This is mostly about time-boxing.**
+
     1. If you get stuck - maximize your time: try building another part, going back to previous working commit, or asking your TL for help.
 1. Follow [each part](#part-1).
 1. Find design resources OR use your design skills make the application look professional.

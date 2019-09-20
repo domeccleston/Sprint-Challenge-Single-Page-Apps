@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tab, Menu, Icon } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 
@@ -12,4 +12,19 @@ import { NavLink } from "react-router-dom";
 
 export default function TabNav() {
 
+    const [activeItem, setActive] = useState('home')
+
+    const handleItemClick = (event, {name}) => {
+        setActive(name);
+    }
+
+    return (
+        <Menu tabular>
+            <Menu.Item active={activeItem === 'home'} name="home" onClick={handleItemClick}/>
+            <Menu.Item active={activeItem === 'locations'} name="locations" onClick={handleItemClick}/>
+            <Menu.Item active={activeItem === 'characters'} name="characters" onClick={handleItemClick}/>
+            <Menu.Item active={activeItem === 'episodes'} name="episodes" onClick={handleItemClick}/>
+        </Menu>
+    )
+        
 };
