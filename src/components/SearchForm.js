@@ -1,7 +1,15 @@
- 
+import React, { render, useState } from "react";
+import { Link } from 'react-router-dom';
+import CharacterList from './CharacterList'; 
+
+
+export default function SearchForm({ onSearch }) {
+  // STRETCH TODO: Add stateful logic for query/form data
+  const [name, setName] = useState("");
+
+  const handleInputChange = (event) => {
     setName(event.target.value);
   }
-
 
   return (
     <section className="search-form">
