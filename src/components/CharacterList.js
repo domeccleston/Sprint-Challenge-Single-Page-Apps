@@ -7,20 +7,28 @@ import { Search } from "semantic-ui-react";
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [characterData, updateCharacter] = useState([]);
+  const [searchState, updateSearch] = useState('');
 
    useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
     axios.get("https://rickandmortyapi.com/api/character/")
       .then(response => {
-        updateCharacter(response.data.results)
+        if (searchState === "") {
+          updateCharacter(response.data.results);
+        }
+        else {
+          const searchResults = response.data.results.filter(item => item.name.includes(searchState));
+          updateCharacter(searchResults)
+        }
       })
       .catch(error => console.log(error))
-  }, []);
+  }, [searchState]);
 
   return (
     <>
-    <SearchForm />
+    <SearchForm data={searchState} setter={updateSearch}/>
+    <h3>{searchState}</h3>
     <section className="character-list grid-view">
       {characterData.map(item => (
         <CharacterCard data={item} />

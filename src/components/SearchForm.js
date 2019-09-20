@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import CharacterList from './CharacterList'; 
 
 
-export default function SearchForm({ onSearch }) {
+export default function SearchForm(props) {
   // STRETCH TODO: Add stateful logic for query/form data
-  const [name, setName] = useState("");
+  const name = props.data;
+  const setName = props.setter;
 
   const handleInputChange = (event) => {
     setName(event.target.value);
