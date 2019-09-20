@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import CharacterCard from './CharacterCard';
+import SearchForm from './SearchForm';
+import { Search } from "semantic-ui-react";
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
@@ -17,10 +19,13 @@ export default function CharacterList() {
   }, []);
 
   return (
+    <>
+    <SearchForm />
     <section className="character-list grid-view">
       {characterData.map(item => (
         <CharacterCard data={item} />
       ))}
     </section> 
+    </>
   );
 }

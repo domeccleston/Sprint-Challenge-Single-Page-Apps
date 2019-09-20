@@ -3,7 +3,6 @@ import { Card, Image } from "semantic-ui-react";
 
 
 export default function CharacterCard({ data }) {
-  console.log(data)
   return (
     <Card>
       <Image src={data.image}/>
